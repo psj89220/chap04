@@ -13,10 +13,10 @@ import lombok.Data;
 @Table(name="tbl_profile")
 public class Profile {
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+//	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private Long fno;
 	private String fname;
 	
-	private boolean current;
+	private boolean current2;
 
 }
