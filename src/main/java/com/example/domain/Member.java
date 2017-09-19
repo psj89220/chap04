@@ -5,22 +5,19 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
 
-@Getter
-@Setter
-@ToString
+@Data
 @Entity
-@Table(name="tbl_members")
-@EqualsAndHashCode(of="uid")
+@Table(name="tbl_member")
 public class Member {
-	
+	// AUTO: DB에 종속적으로 방식 수행(MySQL -> IDENTITY, Oracle -> SEQUENCE)
+	// IDENTITY: MySQL에 최적화된 Auto Increment 방식(Oracle)
+	// SEQUENCE: Oracle에 최적화된 방식 
+	// TABLE: 별도로 테이블을 생성해서 채번함
 	@Id
-	private Integer uid2;
-	private String upw;
-	private String uname;
+//	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer id;
+	private String pw;
+	private String name;
 
 }
